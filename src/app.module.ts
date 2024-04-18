@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { MusiquesModule } from './musique/musique.module';
+import { UtilisateursModule } from './utilisateur/utilisateur.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -14,7 +15,7 @@ import { MusiquesModule } from './musique/musique.module';
                 "database": "melomix",
                 "entities": ["dist/**/**.entity{.ts,.js}"],
                 "synchronize": true
-            }),MusiquesModule],
+            }),MusiquesModule, UtilisateursModule],
   controllers: [AppController],
   providers: [AppService],
 })
