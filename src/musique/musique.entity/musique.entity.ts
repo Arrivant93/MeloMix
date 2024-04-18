@@ -8,8 +8,8 @@ export class MusiqueEntity{
     @Column({ length: 45 })
     titre:string;
 
-    @Column({ length: 45 })
-    duree: string;
+    @Column({ default: 0})
+    duree: number;
 
     @Column({ default: 0})
     annee: number;
