@@ -20,7 +20,7 @@ export class UtilisateurEntity{
     @Column('text')
     mdp:string;
 
-    @OneToMany(() => PlaylistEntity, (playlists) => playlists.Utilisateur)
+    @OneToMany(() => PlaylistEntity, (playlist) => playlist.Utilisateur)
     Playlist: PlaylistEntity[];
 
    

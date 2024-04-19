@@ -10,7 +10,7 @@ export class PlaylistService {
     constructor(@InjectRepository(PlaylistEntity) private PlaylistsRepository: Repository<PlaylistEntity>) { }
 
     async getPlaylists(): Promise<PlaylistEntity[]> {
-        return await this.PlaylistsRepository.find({ relations: ['Playlist'] });
+        return await this.PlaylistsRepository.find({ relations: ['Utilisateur'] });
     }
 
     async getPlaylist(_id: number): Promise<PlaylistEntity> {
