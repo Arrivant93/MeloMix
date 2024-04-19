@@ -1,6 +1,7 @@
 import { Controller, Post, Body, Get, Put, Delete,Param, UseGuards} from '@nestjs/common';
 import { UtilisateurService } from './utilisateur.service';
 import { UtilisateurEntity } from './utilisateur.entity/utilisateur.entity';
+import { AuthGuard } from 'src/auth/auth.guard';
 
 
 @Controller('Utilisateurs')
@@ -28,6 +29,7 @@ export class UtilisateurController {
         return this.service.updateUtilisateur(Utilisateur);
     }
 
+    @UseGuards(AuthGuard) // Pour ne pas supprimer un uttilisateur sans token 
     @Delete(':id')
     deleteUser(@Param() params) {
         return this.service.deleteUtilisateur(params.id);
