@@ -9,6 +9,9 @@ export class ArtisteEntity{
     @Column({ length: 250})
     nom:string;
     musiques: any;
+
+    @Column('text')
+    image: string;
     
     @OneToMany(() => MusiqueEntity, (musique) => musique.Artiste)
     Musique: MusiqueEntity[];
