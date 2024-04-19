@@ -1,3 +1,4 @@
+import { PlaylistEntity } from 'src/playlist/playlist.entity/playlist.entity';
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany  } from 'typeorm';
 
 @Entity()
@@ -18,6 +19,9 @@ export class UtilisateurEntity{
 
     @Column('text')
     mdp:string;
+
+    @OneToMany(() => PlaylistEntity, (playlist) => playlist.Utilisateur)
+    Playlist: PlaylistEntity[];
 
    
 }

@@ -4,6 +4,9 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { MusiquesModule } from './musique/musique.module';
 import { UtilisateursModule } from './utilisateur/utilisateur.module';
+import { PlaylistModule } from './playlist/playlist.module';
+import { ArtisteModule } from './artiste/artiste.module';
+import { StyleModule } from './style/style.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -15,7 +18,7 @@ import { UtilisateursModule } from './utilisateur/utilisateur.module';
                 "database": "melomix",
                 "entities": ["dist/**/**.entity{.ts,.js}"],
                 "synchronize": true
-            }),MusiquesModule, UtilisateursModule],
+            }),MusiquesModule, UtilisateursModule, PlaylistModule, ArtisteModule, StyleModule],
   controllers: [AppController],
   providers: [AppService],
 })

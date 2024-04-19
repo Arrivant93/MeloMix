@@ -10,7 +10,7 @@ export class MusiqueService {
     constructor(@InjectRepository(MusiqueEntity) private MusiquesRepository: Repository<MusiqueEntity>) { }
 
     async getMusiques(): Promise<MusiqueEntity[]> {
-        return await this.MusiquesRepository.find();
+        return await this.MusiquesRepository.find({ relations: ['Artiste','Style'] });
     }
 
     async getMusique(_id: number): Promise<MusiqueEntity> {
