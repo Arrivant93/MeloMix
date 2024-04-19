@@ -14,8 +14,8 @@ export class UtilisateurEntity {
   @Column({ length: 250 })
   email: string;
 
-  @Column({ default: 0 })
-  telephone: number;
+  @Column({ length: 250 })
+  telephone: string;
 
   @Column('text')
   mdp: string;
