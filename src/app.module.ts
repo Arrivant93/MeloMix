@@ -7,6 +7,7 @@ import { UtilisateursModule } from './utilisateur/utilisateur.module';
 import { PlaylistModule } from './playlist/playlist.module';
 import { ArtisteModule } from './artiste/artiste.module';
 import { StyleModule } from './style/style.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -18,7 +19,7 @@ import { StyleModule } from './style/style.module';
                 "database": "melomix",
                 "entities": ["dist/**/**.entity{.ts,.js}"],
                 "synchronize": true
-            }),MusiquesModule, UtilisateursModule, PlaylistModule, ArtisteModule, StyleModule],
+            }),MusiquesModule, UtilisateursModule, PlaylistModule, ArtisteModule, StyleModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })
