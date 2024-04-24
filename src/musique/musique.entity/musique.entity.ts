@@ -7,7 +7,7 @@ export class MusiqueEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ length: 250 })
+  @Column({ length: 250, unique: true })
   titre: string;
 
   @Column({ default: 0 })
