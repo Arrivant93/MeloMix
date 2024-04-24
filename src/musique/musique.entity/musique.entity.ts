@@ -19,7 +19,7 @@ export class MusiqueEntity {
   @Column('text')
   pochette: string;
 
-  @ManyToOne(() => ArtisteEntity, (Artiste) => Artiste.musiques)
+  @ManyToOne(() => ArtisteEntity, (Artiste) => Artiste.Musiques)
   Artiste: ArtisteEntity;
 
   @ManyToOne(() => StyleEntity, (Style) => Style.Musique)
