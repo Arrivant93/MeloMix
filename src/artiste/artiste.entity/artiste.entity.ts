@@ -6,9 +6,8 @@ export class ArtisteEntity{
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({ length: 250})
+    @Column({ length: 250, unique: true })
     nom:string;
-    musiques: any;
 
     @Column('text')
     image: string;
