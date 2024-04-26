@@ -18,6 +18,9 @@ export class MusiqueEntity {
 
   @Column('text')
   pochette: string;
+  
+  @Column('text')
+  data: string;
 
   @ManyToOne(() => ArtisteEntity, (Artiste) => Artiste.Musique)
   Artiste: ArtisteEntity;
